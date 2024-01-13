@@ -31,7 +31,7 @@ const handleNewUser = async (req, res) => {
 
     await queryAsync(createUserQuery);
 
-    return res.status(201).json({ success: `New user ${email} created!` });
+    return res.status(201).json({ message: `New user ${email} created!` });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message });

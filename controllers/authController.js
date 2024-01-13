@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const { queryAsync } = require("../helpers/queryAsync");
 const bcrypt = require("bcrypt");
-const { connection } = require("../Config/DBConnect");
 
 const handleLogin = async (req, res) => {
   const { email, password } = req.body;
@@ -18,7 +17,7 @@ const handleLogin = async (req, res) => {
   try {
     const result = await queryAsync(checkExisitingUserQuery);
     if (result.length === 0) {
-      return res.status(401).json({ message: "Unauthorized" });
+      return res.status(401).json({ message: "User not found" });
     } else {
       match = await bcrypt.compare(password, result[0].password);
     }
@@ -40,9 +39,9 @@ const handleLogin = async (req, res) => {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
       });
-      res.json({ accessToken });
+      res.status(200).json({ message:accessToken });
     } else {
-      return res.sendStatus(401);
+      return res.status(409).json({ message: "Wrong Password, please try again." });
     }
   } catch (error) {
     console.log(error);

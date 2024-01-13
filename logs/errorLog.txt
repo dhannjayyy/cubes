@@ -32,3 +32,23 @@
 20240113	02:18:08	8417a3b2-7c5c-4829-8db8-b42e89b402d9	Error : Cannot set headers after they are sent to the client
 20240113	02:18:08	5af45959-1df7-429a-837b-a50ddede6fb9	Error : Cannot set headers after they are sent to the client
 20240113	02:18:08	fbe0309f-1a1b-40bc-9a89-6ebc57fd950c	Error : Cannot set headers after they are sent to the client
+20240113	19:50:45	e98de36f-c4ae-4182-8ffe-4a6d66ee2b65	Error : not allowed by CORS
+20240113	19:51:23	bc1c239f-d88a-42d3-986c-0c1393689a9b	Error : not allowed by CORS
+20240113	19:51:42	16c7c138-567b-45f9-ae38-abe138670c32	Error : not allowed by CORS
+20240113	19:52:24	f559b1a2-f0b8-48ce-8fe3-77cbf2eccd95	Error : not allowed by CORS
+20240113	19:53:41	a773a214-ed57-4cb1-a0bd-5ca6099f8568	Error : not allowed by CORS
+20240113	19:53:57	ef439a99-8f93-4cc8-823d-ef3c36256542	Error : not allowed by CORS
+20240113	19:54:11	d95cb6a9-84c5-487f-b1b6-bc88214558b1	Error : not allowed by CORS
+20240113	19:54:34	1cb1ab42-017b-4b0f-8971-55eb3b812e0e	Error : not allowed by CORS
+20240113	19:57:42	a334bfc1-816d-4690-9ebd-730151b041b4	Error : not allowed by CORS
+20240113	19:58:12	9f7491d2-19fc-423d-86c8-bb11c4d8d68a	Error : not allowed by CORS
+20240113	19:58:22	742db4ed-e438-440f-ac91-eda3282a36e6	Error : not allowed by CORS
+20240113	19:59:16	ef245c00-7005-4649-8950-6cba9bd0d0a3	Error : not allowed by CORS
+20240113	20:01:35	932e67fa-1646-4192-9bdc-50c0f0b3d028	Error : not allowed by CORS
+20240113	20:02:10	885332fe-3165-4ea7-804a-69316564c8ad	Error : not allowed by CORS
+20240113	20:02:55	ae42a471-f2af-44d4-9b9f-81dcf8fc0552	Error : not allowed by CORS
+20240113	20:03:11	88a86daf-ad16-43e5-b4d0-659d63ad59e3	Error : not allowed by CORS
+20240113	20:03:23	e214c460-de10-41e8-8d17-4da7f318050e	Error : not allowed by CORS
+20240113	20:03:36	78119e66-5746-49b2-a19c-2c964d958d6f	Error : not allowed by CORS
+20240113	20:05:28	437dbc55-f348-44d0-9e52-3526b81d873e	Error : not allowed by CORS
+20240113	20:06:11	c7c9adf1-2e8e-420d-88d2-51f84e456ae1	Error : not allowed by CORS
