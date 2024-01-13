@@ -1,35 +1,40 @@
-const usersDB = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
-const fsPromises = require("fs").promises;
-const path = require("path");
 const bcrypt = require("bcrypt");
-const createUsers = require("../model/users");
+const { connection } = require("../Config/DBConnect");
+const { queryAsync } = require("../helpers/queryAsync");
 
 const handleNewUser = async (req, res) => {
-  const { user, pwd } = req.body;
-  if (!user || !pwd) {
+  const { email, password } = req.body;
+  if (!email || !password) {
     return res
       .status(400)
-      .json({ message: "username and password are required." });
+      .json({ message: "email and password are required." });
   }
-  //   check for duplicate usernames here
-  const duplicate = usersDB.users.find((person) => person.username === user);
-  if (duplicate) return res.sendStatus(409);
+
+  const checkExistingUserQuery = `SELECT user_id, email FROM users WHERE email = '${email}'`;
+
   try {
-    const hashedPwd = await bcrypt.hash(pwd, 10);
-    const newUser = { username: user, password: hashedPwd };
-    usersDB.setUsers([...usersDB.users, newUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "users.json"),
-      JSON.stringify(usersDB.users)
-    );
-    res.status(201).json({ success: `New user ${user} created!` });
+    const results = await queryAsync(checkExistingUserQuery);
+
+    if (results.length > 0) {
+      return res
+        .status(409)
+        .json({ message: `User with email ${email} already exists.` });
+    }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.log(error.stack);
+    return res.status(500).json({ message: "user could not be registered." });
+  }
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const createUserQuery = `INSERT INTO users (email, password) VALUES ('${email}', '${hashedPassword}')`;
+
+    await queryAsync(createUserQuery);
+
+    return res.status(201).json({ success: `New user ${email} created!` });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message });
   }
 };
 

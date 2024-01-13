@@ -8,3 +8,27 @@
 20240111	17:11:26	8b2d4f29-94d2-4eb7-9ae0-aef62740bda0	TypeError : Cannot read properties of undefined (reading 'firstname')
 20240111	17:11:26	17a7a3d5-64de-4d24-91d5-e9dcc67ba6b5	TypeError : Cannot read properties of undefined (reading 'firstname')
 20240111	17:11:27	92781608-9943-4129-8b19-9baf7b08a3c9	TypeError : Cannot read properties of undefined (reading 'firstname')
+20240113	01:41:27	53ac0adf-ecfa-4783-a598-956c9147f0c5	ReferenceError : decoded is not defined
+20240113	02:00:26	1a7f85c2-1a85-43e5-8dab-48bde602da63	TypeError : res.senSstatus is not a function
+20240113	02:00:29	905b5d1f-9a24-4348-b547-2f2a98102557	TypeError : res.senSstatus is not a function
+20240113	02:00:29	57116c95-65af-4567-b70b-1b14d656daa2	TypeError : res.senSstatus is not a function
+20240113	02:00:29	93a44893-df3c-4907-9db9-a26739f66536	TypeError : res.senSstatus is not a function
+20240113	02:00:29	6d6cdbb1-827d-4843-9331-4901ca613d29	TypeError : res.senSstatus is not a function
+20240113	02:06:14	c3561aa8-8218-4247-b3f9-73e5d6fdc0e8	SyntaxError : Unexpected token . in JSON at position 28
+20240113	02:18:05	aa5a5186-8edd-4581-80be-31d6bd4ddd38	Error : Cannot set headers after they are sent to the client
+20240113	02:18:06	e21d82fd-d62f-4ff8-9075-125399cf205d	Error : Cannot set headers after they are sent to the client
+20240113	02:18:06	d4bf947a-a412-4c11-ba9e-1fc5bba6e51d	Error : Cannot set headers after they are sent to the client
+20240113	02:18:06	3a01f639-386c-4ecf-b40b-e56c347ed781	Error : Cannot set headers after they are sent to the client
+20240113	02:18:06	3e474700-3cf9-4668-903a-2c36e715be45	Error : Cannot set headers after they are sent to the client
+20240113	02:18:06	013a1876-4851-4ae5-9ec6-4201230287c0	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	66eb263f-2f2f-46bd-a3f0-bfa148b4baae	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	f76b3b93-a9dd-42e8-929d-25ce513bf408	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	f97fe00e-0034-4d37-89d3-91a79ddcf22f	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	e7f818fe-e4c8-43f3-9617-02f16b2943e1	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	119e8e9b-7f21-497f-b7ce-f410cf6c36ca	Error : Cannot set headers after they are sent to the client
+20240113	02:18:07	b3dbe8d3-8e16-47de-939b-117d09b55c86	Error : Cannot set headers after they are sent to the client
+20240113	02:18:08	075399b1-d541-4b54-8c21-365cc328c413	Error : Cannot set headers after they are sent to the client
+20240113	02:18:08	e3ce0b6f-3f54-4389-841c-8e19a30348d7	Error : Cannot set headers after they are sent to the client
+20240113	02:18:08	8417a3b2-7c5c-4829-8db8-b42e89b402d9	Error : Cannot set headers after they are sent to the client
+20240113	02:18:08	5af45959-1df7-429a-837b-a50ddede6fb9	Error : Cannot set headers after they are sent to the client
+20240113	02:18:08	fbe0309f-1a1b-40bc-9a89-6ebc57fd950c	Error : Cannot set headers after they are sent to the client

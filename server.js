@@ -5,6 +5,8 @@ const { logger } = require("./middlewares/logEvents");
 const errorHandler = require("./middlewares/errorHandller");
 const corsOptions = require("./Config/corsOptions");
 const { configDB, emitter } = require("./Config/configDB");
+const verifyJWT = require("./middlewares/verifyJWT");
+const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3500;
 
 try {
@@ -19,12 +21,19 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
   res.send("hello ");
 });
 
-app.use("/Tasks", require("./Api/tasks"));
 app.use("/register", require("./Api/register"));
+app.use("/auth", require("./Api/auth"));
+app.use("/refresh", require("./Api/refresh"));
+
+// verifyJWT is before tasks route because we want to make tasks route as protected only
+app.use(verifyJWT);
+app.use("/tasks", require("./Api/tasks"));
 
 app.all("*", (req, res) => {
   res.status(404);
