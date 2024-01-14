@@ -21,6 +21,7 @@ const getAllTasks = async (req, res) => {
 };
 
 const addTask = async (req, res) => {
+  console.log("reached")
   const { title: taskTitle, description: taskDescription } = req.body;
   if (!taskTitle || !taskDescription) {
     return res
