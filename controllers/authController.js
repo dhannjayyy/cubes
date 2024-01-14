@@ -37,11 +37,15 @@ const handleLogin = async (req, res) => {
       await queryAsync(storeRefreshTokenQuery);
       res.cookie("jwt", refreshToken, {
         httpOnly: true,
+        sameSite: "None",
+        secure: true,
         maxAge: 24 * 60 * 60 * 1000,
       });
-      res.status(200).json({ message:accessToken });
+      res.status(200).json({ message: accessToken });
     } else {
-      return res.status(409).json({ message: "Wrong Password, please try again." });
+      return res
+        .status(409)
+        .json({ message: "Wrong Password, please try again." });
     }
   } catch (error) {
     console.log(error);

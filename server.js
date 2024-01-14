@@ -7,6 +7,7 @@ const corsOptions = require("./Config/corsOptions");
 const { configDB, emitter } = require("./Config/configDB");
 const verifyJWT = require("./middlewares/verifyJWT");
 const cookieParser = require("cookie-parser");
+const credentials = require("./middlewares/credentials");
 const PORT = process.env.PORT || 3500;
 
 try {
@@ -16,12 +17,11 @@ try {
 }
 
 app.use(logger);
-
+app.use(cookieParser());
+app.use(credentials);
 app.use(cors(corsOptions));
 
 app.use(express.json());
-
-app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("hello ");

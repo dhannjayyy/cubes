@@ -5,10 +5,9 @@ const { queryAsync } = require("../helpers/queryAsync");
 const handleRefreshToken = async (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwt) {
-    return res.sendStatus(401);
+    return res.status(401).json({ message: "Session expired, Login again." });
   }
 
-  console.log(cookies.jwt);
   const refreshToken = cookies.jwt;
 
   const fetchRefreshTokenQuery = `SELECT * FROM users WHERE refreshToken = '${refreshToken}'`;
@@ -25,7 +24,7 @@ const handleRefreshToken = async (req, res) => {
       process.env.REFRESH_TOKEN_SECRET,
       (error, decoded) => {
         if (error || foundUser.email !== decoded.email)
-          return res.sendStatus(403);
+          return res.status(403).json({ message: "Forbidden, email not found" });
         const accessToken = jwt.sign(
           { email: decoded.email },
           process.env.ACCESS_TOKEN_SECRET,
@@ -33,7 +32,7 @@ const handleRefreshToken = async (req, res) => {
             expiresIn: "6h",
           }
         );
-        res.json({ accessToken });
+        res.status(200).json({ message: accessToken, email: decoded.email });
       }
     );
   } catch (error) {
